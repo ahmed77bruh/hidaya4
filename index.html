@@ -2,295 +2,51 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<title>Kitāb al-Rahn — Page 1 (Takrār) | al-Hidāyah Vol. 4</title>
+<title>hidaya4 — al-Hidāyah Study Site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #faf7f1; --ink: #2a2420; --muted: #6b5f52; --gold: #a67c1e;
-    --hanafi: #2f6b4f; --hanafi-bg: #f0f7f3;
-    --khilaf: #a53d3d; --khilaf-bg: #fbf0ef;
-    --takhrij: #1a8a72; --takhrij-bg: #eafaf6;
-    --binayah: #6a4fa3; --binayah-bg: #f2eefc;
-    --example: #2f5f8a; --example-bg: #eef5fb;
-  }
+  :root { --bg: #faf7f1; --ink: #2a2420; --muted: #6b5f52; --gold: #a67c1e; }
   * { box-sizing: border-box; }
   body { background: var(--bg); color: var(--ink); font-family: Georgia, serif; margin: 0; padding: 0 1rem 3rem; line-height: 1.5; }
-  .wrap { max-width: 760px; margin: 0 auto; }
-  header { padding: 1.8rem 0 1rem; border-bottom: 3px double var(--gold); margin-bottom: 1.3rem; }
-  header h1 { font-family: 'Amiri', serif; direction: rtl; font-size: 1.9rem; margin: 0 0 0.2rem; }
-  header .subtitle { font-size: 0.85rem; color: var(--muted); margin: 0.1rem 0; }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { padding: 2.2rem 0 1.2rem; border-bottom: 3px double var(--gold); margin-bottom: 1.5rem; }
+  header h1 { font-family: 'Amiri', serif; direction: rtl; font-size: 2.1rem; margin: 0 0 0.3rem; }
+  header .subtitle { font-size: 0.9rem; color: var(--muted); }
   h2 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); border-bottom: 1px solid #e3d9c4; padding-bottom: 0.3rem; margin: 1.8rem 0 0.8rem; }
-  .arabic { font-family: 'Amiri', serif; direction: rtl; text-align: right; font-size: 1.2rem; line-height: 1.9; }
-  .point { margin-bottom: 0.4rem; }
-  .point .num { font-weight: bold; color: var(--muted); margin-right: 0.3rem; }
-  .nukta { font-size: 0.87rem; color: var(--muted); font-style: italic; }
-  table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 0.5rem; font-size: 0.92rem; }
-  th, td { border: 1px solid #e3d9c4; padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
-  th { background: #f3ead2; color: var(--ink); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; }
-  td.hanafi-cell { background: var(--hanafi-bg); }
-  td.khilaf-cell { background: var(--khilaf-bg); }
-  td .arabic { font-size: 1.05rem; line-height: 1.7; }
-  .tag { display:inline-block; font-size:0.68rem; font-weight:bold; letter-spacing:0.05em; text-transform:uppercase; padding:0.1rem 0.45rem; border-radius:3px; color:#fff; margin-right:0.4rem; }
-  .tag.hanafi { background: var(--hanafi); }
-  .tag.khilaf { background: var(--khilaf); }
-  .takhrij-row { background: var(--takhrij-bg); border-left: 4px solid var(--takhrij); padding: 0.5rem 0.8rem; margin-bottom: 0.5rem; border-radius: 3px; font-size: 0.88rem; }
-  .takhrij-row b { color: var(--takhrij); }
-  .example-box { background: var(--example-bg); border: 2px solid var(--example); border-radius: 6px; padding: 1rem 1.2rem; margin-top: 0.6rem; font-size: 0.93rem; }
-  .example-box h3 { margin: 0 0 0.5rem; color: var(--example); font-size: 1rem; }
-  .names { font-weight: bold; color: var(--example); }
-  .yaad { background: #fbfaf7; border: 1px solid #e3d9c4; border-radius: 6px; padding: 0.9rem 1.1rem; margin-top: 1rem; font-size: 0.88rem; }
-  .yaad h4 { margin: 0 0 0.4rem; color: var(--gold); font-size: 0.8rem; text-transform: uppercase; }
-  .yaad .term { display:inline-block; margin: 0.15rem 0.5rem 0.15rem 0; }
-  .yaad .term b { color: var(--ink); }
-  footer { margin-top: 2rem; font-size: 0.75rem; color: var(--muted); text-align: center; }
-
-  /* expandable in-depth buttons */
-  details.indepth { margin: 0.2rem 0 1rem; }
-  details.indepth > summary {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-family: Georgia, serif;
-    font-size: 0.72rem;
-    font-weight: bold;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #fff;
-    background: var(--gold);
-    padding: 0.22rem 0.65rem;
-    border-radius: 999px;
-    list-style: none;
-    user-select: none;
-    width: fit-content;
-  }
-  details.indepth > summary::-webkit-details-marker { display: none; }
-  details.indepth > summary::before { content: "+"; font-size: 0.85rem; line-height: 1; }
-  details.indepth[open] > summary::before { content: "\2212"; }
-  details.indepth.binayah > summary { background: var(--binayah); }
-  details.indepth.takhrij > summary { background: var(--takhrij); }
-  details.indepth.example > summary { background: var(--example); }
-  .indepth-body {
-    margin-top: 0.5rem;
-    padding: 0.85rem 1.05rem;
+  ul.pages { list-style: none; margin: 0; padding: 0; }
+  ul.pages li { margin-bottom: 0.6rem; }
+  ul.pages a {
+    display: block;
     background: #fff;
     border: 1px solid #e3d9c4;
     border-radius: 6px;
-    font-size: 0.89rem;
-    color: #3b352e;
+    padding: 0.8rem 1rem;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
   }
-  .indepth-body .arabic { font-size: 1.05rem; margin: 0.4rem 0; }
-  .indepth-body p { margin: 0 0 0.6rem; }
-  .indepth-body p:last-child { margin-bottom: 0; }
-  .indepth-body .grading { font-weight: bold; }
-
-  /* global mukhtaṣar / in-depth switch — fixed bottom-right, persistent while scrolling */
-  .mode-switch {
-    position: fixed;
-    bottom: 1.1rem;
-    right: 1.1rem;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-    font-size: 0.78rem;
-    color: var(--muted);
-    background: #fffdf8;
-    border: 1px solid #e3d9c4;
-    border-radius: 999px;
-    padding: 0.5rem 0.9rem;
-    box-shadow: 0 4px 14px rgba(42, 36, 32, 0.15);
-  }
-  @media (max-width: 480px) {
-    .mode-switch { right: 0.6rem; bottom: 0.6rem; padding: 0.4rem 0.7rem; gap: 0.4rem; }
-    .mode-switch .lbl { display: none; }
-    .mode-switch .lbl.active { display: inline; }
-  }
-  .mode-switch .lbl { user-select: none; }
-  .mode-switch .lbl.active { color: var(--ink); font-weight: bold; }
-  .switch { position: relative; display: inline-block; width: 42px; height: 24px; flex-shrink: 0; }
-  .switch input { opacity: 0; width: 0; height: 0; }
-  .switch .slider { position: absolute; cursor: pointer; inset: 0; background: #d8cba8; border-radius: 999px; transition: 0.2s; }
-  .switch .slider::before { content: ""; position: absolute; height: 18px; width: 18px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: 0.2s; }
-  .switch input:checked + .slider { background: var(--gold); }
-  .switch input:checked + .slider::before { transform: translateX(18px); }
-  body.all-open details.indepth { border-left: 3px solid #e3d9c4; padding-left: 0.6rem; }
+  ul.pages a:hover { border-color: var(--gold); }
+  ul.pages .en { color: var(--muted); font-size: 0.82rem; display: block; margin-top: 0.15rem; }
+  .arabic { font-family: 'Amiri', serif; direction: rtl; }
+  footer { margin-top: 2rem; font-size: 0.75rem; color: var(--muted); text-align: center; }
 </style>
 </head>
 <body>
 <div class="wrap">
-
 <header>
-  <h1>كِتَابُ الرَّهْنِ</h1>
-  <p class="subtitle">Takrār sheet — Page 1 · al-Hidāyah, Vol. 4 (shamela 11820, page-id 1079)</p>
-  <p class="subtitle">Cross-refs: <span class="tag hanafi" style="background:var(--binayah)">al-Bināyah</span> <span class="tag hanafi" style="background:var(--takhrij)">al-Dirāyah</span> — tap any button for the in-depth version of that point</p>
-  <div class="mode-switch">
-    <span class="lbl active" id="lbl-mukhtasar">Mukhtaṣar</span>
-    <label class="switch">
-      <input type="checkbox" id="mode-toggle">
-      <span class="slider"></span>
-    </label>
-    <span class="lbl" id="lbl-indepth">Full in-depth</span>
-  </div>
+  <h1 class="arabic">الهداية شرح بداية المبتدي</h1>
+  <p class="subtitle">al-Hidāyah, Vol. 4 — study pages (mukhtaṣar/takrār style, with in-depth toggles)</p>
 </header>
 
-<h2>Taʿrīf</h2>
-<div class="point"><span class="num">1.</span><span class="arabic">الرَّهْنُ لُغَةً: حَبْسُ الشَّيْءِ</span> — lughatan: detaining a thing.</div>
-<div class="point"><span class="num">2.</span><span class="arabic">شَرْعًا: جَعْلُ الشَّيْءِ مَحْبُوسًا بِحَقٍّ يُمْكِنُ اسْتِيفَاؤُهُ مِنْهُ كَالدَّيْنِ</span> — sharʿan: a thing held as security for a ḥaqq (usually dayn), istīfāʾ obtainable from it.</div>
+<h2 class="arabic" style="direction:rtl;text-align:right;">كِتَابُ الرَّهْنِ</h2>
+<ul class="pages">
+  <li><a href="kitab_al_rahn_page1.html">Kitāb al-Rahn — Page 1<span class="en">Taʿrīf, dalāʾil, inʿiqād vs. tamām, qabḍ conditions, ḍamān al-marhūn (Ḥanafī vs. Shāfiʿī)</span></a></li>
+  <li><a href="kitab_al_rahn_page2.html">Kitāb al-Rahn — Page 2<span class="en">Ḥanafī rebuttal continued — yad al-istīfāʾ, the ribā point, ʿayn vs. māliyyah, new matn on dayn maḍmūn</span></a></li>
+</ul>
 
-<details class="indepth binayah">
-  <summary>al-Bināyah — in-depth</summary>
-  <div class="indepth-body">
-    <p><b>Lughah:</b> al-ʿAynī notes the same root appears outside contracts: <span class="arabic">﴿كُلُّ نَفْسٍ بِمَا كَسَبَتْ رَهِينَةٌ﴾ [المدثر: ٣٨]</span> — "every soul is rahīnah (held) for what it earned," i.e. detained by the consequence of its own misdeeds. Also: <i>māʾun rāhin</i> = still water, <i>niʿmatun rāhinah</i> = a lasting blessing — the root's core sense is fixity/permanence (al-thabāt wa'l-dawām). "Rahn" (the maṣdar) is also used to mean the marhūn itself; plural rahn/rihān.</p>
-    <p><b>Sharʿan — why "ḥaqq" not "dayn":</b> deliberate, because rahn is valid not only for a dayn but also for a claim from ghaṣb (usurpation); ḥaqq covers both. "Kal-duyūn" is a deliberate exclusion (iḥtirāz) of pledging khamr (wine) and of taking a rahn to secure ḥudūd or qiṣāṣ — those don't admit istīfāʾ through a substitute value.</p>
-    <p><b>al-Qudduri's alternate taʿrīf:</b> rahn shar'an is an ʿaqd wathīqah (contract of security) — distinguishing it from kafālah/ḥawālah (wathīqah bi-dhimmah, security attached to a person's liability) and from a sale-item still in the seller's hand.</p>
-    <p><b>Six-part breakdown</b> al-ʿAynī gives: maʿnā lughatan · maʿnā sharʿan · sabab (the creditor's muṭālabah/demand for security) · rukn (ījāb alone per the Ḥanafīs; some require qabūl too) · ḥukm (milk ḥabs al-marhūn wa-ḥaqq al-muṭālabah bi'l-bayʿ) · ḥikmah (ḥuṣūl al-naẓar min al-jānibayn — mutual benefit to both sides).</p>
-  </div>
-</details>
-
-<h2>Dalāʾil (mukhtaṣar)</h2>
-<div class="point"><span class="num">1.</span> Qurʾān — ﴿فَرِهَانٌ مَقْبُوضَةٌ﴾ [2:283]</div>
-<div class="point"><span class="num">2.</span> Ḥadīth — النبي ﷺ اشترى طعامًا من يهودي ورهنه دِرْعَه (muttafaq ʿalayh)</div>
-<div class="point"><span class="num">3.</span> Ijmāʿ — munʿaqid (undisputed)</div>
-<div class="point"><span class="num">4.</span> Qiyās — wathīqah, like kafālah</div>
-
-<details class="indepth">
-  <summary>Dalāʾil — in-depth</summary>
-  <div class="indepth-body">
-    <p><b>Qurʾān:</b> the āyah was revealed about a debt made while traveling (safar) without a scribe available — Allāh permits substituting a rahn maqbūḍah for writing/witnessing. "Maqbūḍah" is itself the seed of the qabḍ discussion in Masʾalah 1.</p>
-    <p><b>Ḥadīth:</b> the well-known report that the Prophet ﷺ bought food on credit from a Jewish merchant in Madīnah and left his armor as security — establishes both legitimacy and precedent (fiʿl) at once.</p>
-    <p><b>Ijmāʿ:</b> beyond naql, there is no dispute among the fuqahāʾ that rahn as an institution is legitimate — the differences that follow (this whole kitāb) are about its details, not its basic mashrūʿiyyah.</p>
-    <p><b>Qiyās:</b> rahn and kafālah are both wathāʾiq — kafālah secures fixing (wujūb) a debt onto a second person, rahn secures recovery (istīfāʾ) of a debt from a thing. Since kafālah is agreed legitimate, so is rahn.</p>
-  </div>
-</details>
-
-<h2>Masʾalah 1 — Inʿiqād vs. Tamām</h2>
-<table>
-<tr><th>Matn</th><td colspan="2" class="arabic">الرَّهْنُ يَنْعَقِدُ بِالْإِيجَابِ وَالْقَبُولِ وَيَتِمُّ بِالْقَبْضِ</td></tr>
-<tr><th>Rukn</th><td class="hanafi-cell"><span class="tag hanafi">Ḥanafī</span> ījāb alone (ʿaqd tabarruʿ, like hibah); qabḍ = sharṭ al-luzūm</td><td class="khilaf-cell"><span class="tag khilaf">Mālik</span> yalzam bi-nafs al-ʿaqd (māl both sides → like bayʿ)</td></tr>
-<tr><th>Qabḍ (manqūl)</th><td class="hanafi-cell">ẓāhir riwāyah: takhliyah kāfī (asaḥḥ)</td><td class="khilaf-cell"><span class="tag khilaf">Abū Yūsuf</span> naql required (ḍamān yabtadiʾ, mithl ghaṣb)</td></tr>
-</table>
-
-<details class="indepth">
-  <summary>Masʾalah 1 — in-depth</summary>
-  <div class="indepth-body">
-    <p><b>Ḥanafī rukn:</b> rukn is ījāb by itself, since rahn is ʿaqd tabarruʿ — it is completed by the mutabarriʿ alone (like hibah/ṣadaqah); qabḍ is only sharṭ al-luzūm, not a rukn. Rukn = without which the ʿaqd doesn't exist; sharṭ al-luzūm = needed only for bindingness.</p>
-    <p><b>Mālik's view &amp; why:</b> rahn is lāzim the instant ījāb+qabūl occur — (a) unlike a pure gift it has māl on both sides (marhūn vs. dayn), closer to bayʿ; (b) it's a wathīqah like kafālah, which binds on ʿaqd alone.</p>
-    <p><b>Ḥanafī rebuttal:</b> (1) grammar — "فَرِهَانٌ مَّقْبُوضَةٌ": a maṣdar-phrase right after fāʾ in a conditional's jawāb functions as a command in Arabic usage — Allāh in effect commands "let there be a pledge, taken into possession," placing qabḍ at the heart of what makes rahn function. (2) rahn is tabarruʿ — the rāhin gets nothing owed in return and cannot be judicially compelled (yujbaru), so it needs a concrete imḍāʾ (execution) to finalize, as in waṣiyyah — that imḍāʾ is qabḍ.</p>
-    <p><b>Takhliyah vs. naql:</b> ẓāhir al-riwāyah — mere takhliyah (clearing access, e.g. handing over keys) suffices, by analogy to qabḍ of the mabīʿ in a sale. Abū Yūsuf differs for manqūlāt specifically: this qabḍ originates ḍamān from scratch (ibtidāʾan), like ghaṣb — unlike a buyer's qabḍ, which merely shifts existing ḍamān from seller to buyer — so he requires actual physical naql. Al-Marghīnānī: the first view (takhliyah) is asaḥḥ.</p>
-  </div>
-</details>
-
-<h2>Masʾalah 2 — Sharṭ al-Qabḍ &amp; Khiyār</h2>
-<div class="point"><span class="num">1.</span><span class="arabic">قَبَضَهُ مَحُوزًا مُفَرَّغًا مُتَمَيِّزًا → تَمَّ الْعَقْدُ</span> → lazima</div>
-<div class="point"><span class="num">2.</span> Before qabḍ → <b>rāhin bi'l-khiyār</b>: yusallim aw yarjiʿ ʿan al-rahn (maqṣūd not yet ḥāṣil)</div>
-
-<details class="indepth">
-  <summary>Masʾalah 2 — in-depth</summary>
-  <div class="indepth-body">
-    <p>The marhūn must be maḥūz (fully gathered into the murtahin's hold), mufarragh (cleared of any competing use/mixture), and mutamayyiz (clearly identifiable as this specific object, not a vague undivided share) — only then is qabḍ "complete" and the ʿaqd reaches tamām/luzūm.</p>
-    <p>Before that: the rāhin keeps full khiyār — he isn't yet bound and may simply retract, because the maqṣūd of rahn (securing the murtahin's ability to obtain istīfāʾ) only functions once he actually holds the marhūn — so luzūm cannot attach any earlier than qabḍ.</p>
-  </div>
-</details>
-
-<h2>Masʾalah 3 — Ḍamān al-Marhūn</h2>
-<table>
-<tr><th></th><th class="hanafi-cell">Ḥanafī</th><th class="khilaf-cell">Shāfiʿī</th></tr>
-<tr><td><b>Status</b></td><td class="hanafi-cell">maḍmūn — <span class="arabic" style="font-size:0.95rem">دخل في ضمانه</span></td><td class="khilaf-cell">amānah</td></tr>
-<tr><td><b>If halāk</b></td><td class="hanafi-cell">dayn reduced by qīmah of marhūn</td><td class="khilaf-cell">dayn stays in full — rāhin loses marhūn for nothing</td></tr>
-<tr><td><b>Dalīl</b></td><td class="hanafi-cell">ﷺ to murtahin (horse died): <span class="arabic" style="font-size:0.95rem">«ذَهَبَ حَقُّكَ»</span></td><td class="khilaf-cell"><span class="arabic" style="font-size:0.95rem">«لَا يَغْلَقُ الرَّهْنُ… لِصَاحِبِهِ غُنْمُهُ وَعَلَيْهِ غُرْمُهُ»</span> + qiyās ʿalā halāk al-ṣakk</td></tr>
-</table>
-
-<details class="indepth">
-  <summary>Masʾalah 3 — in-depth</summary>
-  <div class="indepth-body">
-    <p><b>Shāfiʿī's case:</b> the marhūn is pure amānah — the murtahin bears no ḍamān. If it's destroyed without his fault, the rāhin still owes the full dayn. Dalīl: "lā yaghlaq al-rahn... lahu ghunmuhu wa-ʿalayhi ghurmuhu" — any ghunm (growth) of the marhūn belongs to the rāhin, so any ghurm (loss) is his too. Qiyās: rahn is like a debt-document (ṣakk) — losing the paper doesn't erase the debt; also, the whole point of a rahn is to increase ṣiyānah (security) for the creditor — if the debt could vanish whenever the marhūn is destroyed, that defeats the purpose of taking security at all.</p>
-    <p><b>Marghīnānī's gloss on the same ḥadīth:</b> "lā yaghlaq" means the marhūn does not automatically become the murtahin's property in full settlement merely upon the rāhin's default (no automatic foreclosure) — not that it carries zero ḍamān. Same naṣṣ, opposite reading.</p>
-    <p><b>Ḥanafī rebuttal (opens here, continues next page):</b> ﷺ told a murtahin whose pledged horse died, "dhahaba ḥaqquka" — your right (to that extent) is gone — directly supporting that halāk of the marhūn does extinguish part of the dayn, because the murtahin is ḍāmin, not a mere amānah-holder.</p>
-  </div>
-</details>
-
-<h2>Takhrīj — al-Dirāyah (quick grading)</h2>
-<div class="takhrij-row"><b>1000</b> (buying food, pledged armor) — muttafaq ʿalayh, ʿĀʾishah. Wordings vary: ilā ajal / dirʿ min ḥadīd / thalāthīn ṣāʿ.</div>
-<div class="takhrij-row"><b>1001</b> (lā yaghlaq al-rahn) — al-Dāraquṭnī: ḥasan muttaṣil; most routes mursal (al-Zuhrī chains). Tanbīh: "qālahā thalāthan" — Ibn Ḥajar: lam ajidhu (unverified).</div>
-<div class="takhrij-row"><b>1002</b> (dhahaba ḥaqquka) — mursal (Abū Dāwūd al-Marāsīl, via ʿAṭāʾ; also Ibn Abī Shaybah).</div>
-
-<details class="indepth takhrij">
-  <summary>al-Dirāyah — full isnād notes</summary>
-  <div class="indepth-body">
-    <p><b>1001</b> — chains in detail: (a) <b>Ibn Ḥibbān</b>, via Sufyān ← Ziyād ibn Saʿd ← al-Zuhrī ← Saʿīd ← Abū Hurayrah; <span class="grading">ṣaḥḥaḥahu al-Ḥākim</span>. (b) <b>al-Dāraquṭnī</b>, muttaṣil route, graded <span class="grading">ḥasan muttaṣil</span>; also authenticated by ʿAbd al-Ḥaqq, accepted by Ibn ʿAbd al-Barr. (c) <b>ʿAbd al-Razzāq</b> ← Maʿmar ← al-Zuhrī ← Ibn al-Musayyab — <span class="grading">mursal</span>; includes al-Zuhrī confirming this addresses the pre-Islamic saying "if I don't bring your money, the rahn is yours," with the addition "if it perishes, this one's right does not disappear — only the value perishes from the rahn's owner; lahu ghunmuhu wa-ʿalayhi ghurmuhu." (d) Same mursal chain also via al-Thawrī, Ibn Abī Shaybah/Wakīʿ, and al-Shāfiʿī/Ibn Abī Fudayk — all ← Ibn Abī Dhiʾb ← al-Zuhrī. Al-Shāfiʿī's own gloss: ghunmuhu = increase, ghurmuhu = decrease and halāk. (e) <b>Abū Dāwūd</b> (al-Marāsīl): notes "lahu ghunmuhu wa-ʿalayhi ghurmuhu" may be <span class="grading">Saʿīd ibn al-Musayyab's own words</span> (mudraj), not the Prophet's ﷺ. Parallel report from Ibrāhīm al-Nakhaʿī describes the jāhilī practice the ḥadīth corrects.</p>
-    <p><b>Tanbīh:</b> Ibn Ḥajar explicitly flags "qālahā thalāthan" (said it three times) as <span class="grading">"lam ajidhu"</span> — not found in any source he traced. Worth knowing before citing that detail as established.</p>
-    <p><b>1000:</b> Ibn Ḥajar cross-refers that something on this ḥadīth already preceded at the start of Kitāb al-Buyūʿ.</p>
-    <p><b>1002:</b> via ʿAṭāʾ — a man pledged a horse, it died in the murtahin's hand, Prophet ﷺ said "dhahaba ḥaqquka" — mursal in both Abū Dāwūd's Marāsīl and Ibn Abī Shaybah. The entire Ḥanafī rebuttal on this page rests on a mursal report — al-Marghīnānī will need to argue for its acceptability, or argue the ruling by other means, on the next page.</p>
-  </div>
-</details>
-
-<h2>Ṣūrat al-Masʾalah</h2>
-<div class="example-box">
-  <h3>ʿAmr &amp; Bakr</h3>
-  <p>ʿAmr owes Bakr <b>$1,000</b> dayn. Pledges a laptop (qīmah <b>$800</b>) — ījāb; Bakr qabūl.</p>
-  <p><b>Before qabḍ:</b> ʿAmr may still rajaʿa (khiyār) — Bakr can't force delivery.</p>
-  <p><b>After qabḍ, halāk (no fault of Bakr):</b></p>
-  <ul style="margin:0.3rem 0 0.6rem 1.1rem; padding:0;">
-    <li><span class="names">Ḥanafī:</span> $800 of dayn extinguished → ʿAmr owes <b>$200</b>.</li>
-    <li><span class="names">Shāfiʿī:</span> ʿAmr still owes the full <b>$1,000</b>.</li>
-  </ul>
-
-  <details class="indepth example">
-    <summary>Walkthrough — in-depth</summary>
-    <div class="indepth-body">
-      <p><b>Scenario A (before qabḍ):</b> ʿAmr offers the laptop (ījāb), Bakr accepts (qabūl) — the ʿaqd is munʿaqid but not yet lāzim (it's tabarruʿ, like hibah). Before ʿAmr actually hands it over, he changes his mind — since qabḍ hasn't happened, this is within his khiyār and Bakr cannot compel delivery. Had ʿAmr delivered it and Bakr received it maḥūzan mufarraghan mutamayyizan, the ʿaqd becomes lāzim and ʿAmr can no longer withdraw.</p>
-      <p><b>Scenario B (after qabḍ, halāk occurs):</b> ʿAmr delivers, Bakr takes proper qabḍ — the laptop is now marhūn in Bakr's ḍamān. A week later, with no fault of Bakr's, it's destroyed (say, stolen beyond recovery).</p>
-      <p><b>Per al-Shāfiʿī:</b> the laptop was amānah in Bakr's hand — Bakr bears no risk, so none of ʿAmr's dayn is reduced; ʿAmr still owes the full $1,000 and has lost his $800 laptop for nothing.</p>
-      <p><b>Per the Ḥanafī view</b> (the position al-Marghīnānī is building toward, via "dhahaba ḥaqquka"): the laptop was maḍmūn in Bakr's possession, not mere amānah — its halāk operates as an implicit istīfāʾ up to its qīmah. $800 of the dayn is treated as satisfied, so ʿAmr now owes Bakr only the remaining $200.</p>
-    </div>
-  </details>
+<footer>hidaya4 · shamela 11820 / 5908 / 427</footer>
 </div>
-
-<div class="yaad">
-  <h4>Yād Rakheñ — key terms</h4>
-  <span class="term"><b>rāhin</b> pledgor</span>·
-  <span class="term"><b>marhūn</b> pledged item</span>·
-  <span class="term"><b>murtahin</b> pledgee</span>·
-  <span class="term"><b>dayn</b> debt</span>·
-  <span class="term"><b>qabḍ</b> possession</span>·
-  <span class="term"><b>ḍamān</b> liability</span>·
-  <span class="term"><b>amānah</b> trust</span>·
-  <span class="term"><b>luzūm</b> bindingness</span>·
-  <span class="term"><b>tabarruʿ</b> gratuitous</span>·
-  <span class="term"><b>takhliyah</b> constructive possession</span>·
-  <span class="term"><b>ghunm/ghurm</b> gain/loss</span>
-</div>
-
-<footer>hidaya4 · Kitāb al-Rahn p.1 (page-id 1079) · shamela 11820 / 5908 / 427</footer>
-
-</div>
-<script>
-(function () {
-  var toggle = document.getElementById('mode-toggle');
-  var lblM = document.getElementById('lbl-mukhtasar');
-  var lblI = document.getElementById('lbl-indepth');
-  var allDetails = document.querySelectorAll('details.indepth');
-
-  function applyMode(open) {
-    allDetails.forEach(function (d) { d.open = open; });
-    lblM.classList.toggle('active', !open);
-    lblI.classList.toggle('active', open);
-    document.body.classList.toggle('all-open', open);
-  }
-
-  var saved = localStorage.getItem('hidaya4-mode');
-  var startOpen = saved === 'indepth';
-  toggle.checked = startOpen;
-  applyMode(startOpen);
-
-  toggle.addEventListener('change', function () {
-    applyMode(toggle.checked);
-    localStorage.setItem('hidaya4-mode', toggle.checked ? 'indepth' : 'mukhtasar');
-  });
-})();
-</script>
 </body>
 </html>
