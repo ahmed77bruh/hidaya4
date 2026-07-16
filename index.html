@@ -85,6 +85,25 @@
   .indepth-body p { margin: 0 0 0.6rem; }
   .indepth-body p:last-child { margin-bottom: 0; }
   .indepth-body .grading { font-weight: bold; }
+
+  /* global mukhtaṣar / in-depth switch */
+  .mode-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.9rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .mode-switch .lbl { user-select: none; }
+  .mode-switch .lbl.active { color: var(--ink); font-weight: bold; }
+  .switch { position: relative; display: inline-block; width: 42px; height: 24px; flex-shrink: 0; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .switch .slider { position: absolute; cursor: pointer; inset: 0; background: #d8cba8; border-radius: 999px; transition: 0.2s; }
+  .switch .slider::before { content: ""; position: absolute; height: 18px; width: 18px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: 0.2s; }
+  .switch input:checked + .slider { background: var(--gold); }
+  .switch input:checked + .slider::before { transform: translateX(18px); }
+  body.all-open details.indepth { border-left: 3px solid #e3d9c4; padding-left: 0.6rem; }
 </style>
 </head>
 <body>
@@ -93,7 +112,15 @@
 <header>
   <h1>كِتَابُ الرَّهْنِ</h1>
   <p class="subtitle">Takrār sheet — Page 1 · al-Hidāyah, Vol. 4 (shamela 11820, page-id 1079)</p>
-  <p class="subtitle">Cross-refs: <span class="tag hanafi" style="background:var(--binayah)">al-Bināyah</span> <span class="tag hanafi" style="background:var(--takhrij)">al-Dirāyah</span> — tap the buttons below for the in-depth version of any point</p>
+  <p class="subtitle">Cross-refs: <span class="tag hanafi" style="background:var(--binayah)">al-Bināyah</span> <span class="tag hanafi" style="background:var(--takhrij)">al-Dirāyah</span> — tap any button for the in-depth version of that point</p>
+  <div class="mode-switch">
+    <span class="lbl active" id="lbl-mukhtasar">Mukhtaṣar</span>
+    <label class="switch">
+      <input type="checkbox" id="mode-toggle">
+      <span class="slider"></span>
+    </label>
+    <span class="lbl" id="lbl-indepth">Full in-depth</span>
+  </div>
 </header>
 
 <h2>Taʿrīf</h2>
@@ -227,5 +254,30 @@
 <footer>hidaya4 · Kitāb al-Rahn p.1 (page-id 1079) · shamela 11820 / 5908 / 427</footer>
 
 </div>
+<script>
+(function () {
+  var toggle = document.getElementById('mode-toggle');
+  var lblM = document.getElementById('lbl-mukhtasar');
+  var lblI = document.getElementById('lbl-indepth');
+  var allDetails = document.querySelectorAll('details.indepth');
+
+  function applyMode(open) {
+    allDetails.forEach(function (d) { d.open = open; });
+    lblM.classList.toggle('active', !open);
+    lblI.classList.toggle('active', open);
+    document.body.classList.toggle('all-open', open);
+  }
+
+  var saved = localStorage.getItem('hidaya4-mode');
+  var startOpen = saved === 'indepth';
+  toggle.checked = startOpen;
+  applyMode(startOpen);
+
+  toggle.addEventListener('change', function () {
+    applyMode(toggle.checked);
+    localStorage.setItem('hidaya4-mode', toggle.checked ? 'indepth' : 'mukhtasar');
+  });
+})();
+</script>
 </body>
 </html>
